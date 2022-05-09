@@ -1,4 +1,4 @@
-package com.java.learning.predicate;
+package com.java.learning.supplier;
 
 public class Employee {
     int id;
