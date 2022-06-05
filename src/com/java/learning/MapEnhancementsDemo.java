@@ -2,6 +2,7 @@ package com.java.learning;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class MapEnhancementsDemo {
     public static void  main(String ar[]){
@@ -31,5 +32,15 @@ public class MapEnhancementsDemo {
         marksMapSem2.put("Raman",84);
         marksMap.forEach((k,v) -> marksMapSem2.merge(k,v, (v1,v2)-> v1+v2));
         System.out.println(marksMapSem2);
+
+        marksMapSem2.entrySet()
+                .stream()
+                .sorted(Map.Entry.< String,Integer >comparingByKey())
+                .forEach(System.out::println);
+        System.out.println();
+        marksMapSem2.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(System.out::println);
     }
 }
